@@ -1,0 +1,5 @@
+1) Place Star_Pack folder at Documents/VideoCopilot/Models.
+
+2) Launch Element 3D and the folder will be available to browse in the Model Browser tab in a folder of the same name. 
+
+3) Enjoy and May the Force be with you!
