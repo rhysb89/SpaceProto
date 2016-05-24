@@ -45,16 +45,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\Editor\FX_3DRadar_M_Editor.cs" />
+     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\Editor\FX_3DRadar_R_Editor.cs" />
+     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\Editor\FX_Class_M_Editor.cs" />
+     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\Editor\FX_Faction_M_Editor.cs" />
+     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\Editor\FX_Input_M_Editor.cs" />
+     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\Editor\FX_Mission_Editor.cs" />
+     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\Editor\FX_Mission_Giver_Editor.cs" />
+     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\Editor\FX_Mission_Mgr_Editor.cs" />
      <Compile Include="Assets\Imported\VolumetricLines\Scripts\Editor\ExposeProperties.cs" />
      <Compile Include="Assets\Imported\VolumetricLines\Scripts\Editor\VolumetricLineBehaviorEditor.cs" />
      <Compile Include="Assets\Imported\VolumetricLines\Scripts\Editor\VolumetricLineStripBehaviorEditor.cs" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlended.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAdditive.shader" />
+     <None Include="Assets\Imported\FX 3D Radar\Setup.txt" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAdditiveFast.shader" />
      <None Include="Assets\Imported\VC_StarPack.2\VC_StarPack\Install Notes.txt" />
+     <None Include="Assets\Imported\FX 3D Radar\Using Target Lead.txt" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineStripShaderAdditive.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineStripShaderAlphaBlended.shader" />
+     <None Include="Assets\Imported\FX 3D Radar\Shaders\RadarSphere.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlendedFast.shader" />
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>/Users/Swash/Desktop/StarWarsTest/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -90,6 +104,8 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{45B334CE-B080-1D48-F061-06B4DAA857BC}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{DA6DA63E-C4D7-2276-CFD9-3DA4A7DC9849}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>

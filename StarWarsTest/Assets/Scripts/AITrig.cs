@@ -27,7 +27,7 @@ public class AITrig : MonoBehaviour {
 	}
 	void OnTriggerExit(Collider col){
 		if (col.tag == "Player") {
-			inTrig = false;
+			//inTrig = false;
 
 		}
 	}

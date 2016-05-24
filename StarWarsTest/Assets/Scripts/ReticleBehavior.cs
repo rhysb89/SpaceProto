@@ -56,15 +56,15 @@ public class ReticleBehavior : MonoBehaviour {
 		//canLockOn = false;
 
 		if (Physics.SphereCast (fireFrom.position, radius, fwd, out hitInfo, rayLength, layerMask)) {
-		
-			targetObject = hitInfo.transform.gameObject;
+			if (hitInfo.transform.tag == "Enemy") {
+				targetObject = hitInfo.transform.gameObject;
 //			marker.transform.position = hitInfo.transform.position;
 
 				canLockOn = true;
 				//Debug.Log ("CanLock");
-			canLockOnReticle.SetActive (true);
-			notLockOn.SetActive (false);
-
+				canLockOnReticle.SetActive (true);
+				notLockOn.SetActive (false);
+			}
 		} else {
 			lockedOn = false;
 			canLockOn = false;

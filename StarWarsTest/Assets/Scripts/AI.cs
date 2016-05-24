@@ -24,7 +24,7 @@ public class AI : MonoBehaviour {
 	public int rounds = 10000;
 	//public AudioClip shot;
 
-	private float nextFire = 0.0F;
+	//private float nextFire = 0.0F;
 	private bool canFire;
 	private bool hasTarget = false;
 	public Transform gun;
@@ -59,6 +59,7 @@ public class AI : MonoBehaviour {
 	public float explodePower;
 	public float explodeRadius;
 	public Transform explodePoint;
+	public FX_3DRadar_RID marker;
 
 	void Awake () {
 
@@ -95,7 +96,7 @@ public class AI : MonoBehaviour {
 			FindTarget();
 		}
 		else if(hasTarget){
-
+			
 			targetSpeed = playerSpeed.speed;
 			var rotate = Quaternion.LookRotation(target.position - plane.position);
 			plane.rotation = Quaternion.Slerp(plane.rotation, rotate, Time.deltaTime * rotateDamp);
@@ -152,7 +153,7 @@ public class AI : MonoBehaviour {
 		}
 		if (health <= 0) {
 
-		
+			marker.DestroyThis ();
 			GameObject debris = Instantiate (explodeDebris, this.transform.position, explodePoint.transform.rotation) as GameObject;
 			explodeDebris.transform.position = this.transform.position;
 			Rigidbody rb = debris.GetComponent<Rigidbody> ();
@@ -175,12 +176,14 @@ public class AI : MonoBehaviour {
 			for (int i = 0; i < 1; i++) {
 				//nextFire = Time.time + fireRate;
 
-		
+					gun.LookAt (GameObject.FindGameObjectWithTag("Player").transform);
+					gun2.LookAt (GameObject.FindGameObjectWithTag ("Player").transform);
 				GameObject laserBeam = Instantiate (bullet, gun.position, gun.rotation) as GameObject;
 				GameObject laserBeamTwo = Instantiate (bullet, gun2.position, gun2.rotation) as GameObject;
 				laserBeam.GetComponent<Rigidbody> ().velocity = transform.forward * fireSpeed;
 				laserBeamTwo.GetComponent<Rigidbody> ().velocity = transform.forward * fireSpeed;
 				//rounds--;
+
 
 				canFire = false;
 					i = 0;
@@ -217,12 +220,55 @@ public class AI : MonoBehaviour {
 	void OnCollisionEnter (Collision col){
 
 		if (col.transform.tag == "Laser") {
-			Debug.Log ("Hit");
-			Vector3 impactPoint = col.transform.position;
+			//Debug.Log ("Hit");
+	//		Vector3 impactPoint = col.transform.position;
 			Destroy (col.gameObject);
-			GameObject explosion = Instantiate (hitExplosion, impactPoint, transform.rotation) as GameObject;
+//			GameObject explosion = Instantiate (hitExplosion, impactPoint, transform.rotation) as GameObject;
 			health -= 5;
 			Invoke ("Explodes", 0.5f);
+
+		}
+		if (col.transform.tag == "Rocket") {
+			//Debug.Log ("Hit");
+		//	Vector3 impactPoint = col.transform.position;
+			Destroy (col.gameObject);
+			//GameObject explosion = Instantiate (hitExplosion, impactPoint, transform.rotation) as GameObject;
+			health -= health;
+			Invoke ("Explodes", 0.5f);
+		}
+		if (col.transform.tag == "Player") {
+
+
+
+			Rigidbody enemyHit = col.gameObject.GetComponent <Rigidbody> ();
+			Vector3 enemyVel = enemyHit.velocity;
+
+
+			Rigidbody playerRB = gameObject.GetComponent<Rigidbody> ();
+			Vector3 playerVel = playerRB.velocity;
+
+			Vector3 normal = col.contacts [0].normal;
+			Debug.Log (Vector3.Angle(normal,playerVel));
+
+			health +=((enemyVel.magnitude + playerVel.magnitude) - (Vector3.Angle(normal,enemyVel))/2)/5;
+
+			//health -= health;
+			Invoke ("Explodes", 0.5f);
+		
+		}
+		if (col.transform.tag == "Asteroid") {
+
+			Rigidbody enemyHit = col.gameObject.GetComponent <Rigidbody> ();
+			Vector3 enemyVel = enemyHit.velocity;
+
+
+			Rigidbody playerRB = gameObject.GetComponent<Rigidbody> ();
+			Vector3 playerVel = playerRB.velocity;
+
+			Vector3 normal = col.contacts [0].normal;
+			Debug.Log (Vector3.Angle(normal,playerVel));
+
+			health +=( (enemyVel.magnitude + playerVel.magnitude) - (Vector3.Angle(normal,enemyVel))/2)/5;
 
 		}
 	

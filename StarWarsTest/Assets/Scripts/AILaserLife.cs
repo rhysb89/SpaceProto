@@ -13,14 +13,14 @@ public class AILaserLife : MonoBehaviour {
 		Destroy (gameObject, lifetime);
 
 	}
-	void OnTriggerEnter(Collider col){
+	void OnCollisionEnter(Collision col){
 
 
-		if (col.tag != "EnemyLaser") {
-			//if (col.tag != "Player") {
-				//			Debug.Log (col.tag);
+		if (col.transform.tag != "EnemyLaser") {
+			if (col.transform.tag != "Enemy") {
+							
 				Destroy (gameObject);
-			//}
+			}
 
 		}
 	}

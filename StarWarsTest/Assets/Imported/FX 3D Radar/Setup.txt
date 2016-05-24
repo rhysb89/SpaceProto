@@ -1,0 +1,117 @@
+
+Quick Setup Guide
+
+*******************************************************************************************************************************
+									Build the GameMgr
+*******************************************************************************************************************************
+1. Drag the _GameMgr Prefab into the scene hierarchy
+2. Zero out the _GameMgr Position & Rotation
+
+All calculations are based around world 0,0,0 as such the _GameMgr will need to always be located at 0,0,0. If not then things will not work as intended.
+If a floating origin is used then be sure that during the asset shift that the _GameMgr is ignored as to keep its position at 0,0,0
+
+
+*******************************************************************************************************************************
+									(Layer Editor) Create A New Layer 
+*******************************************************************************************************************************
+1. Radar  (Can be any name you like)
+
+1. Set your Players camera to exclude the new Radar layer from rendering
+
+
+*******************************************************************************************************************************
+									(Tag Editor) Create Two New Tags
+*******************************************************************************************************************************
+This may get done automatically?
+1. Sub_Component
+2. TargetButton
+
+
+*******************************************************************************************************************************
+									(FX_3DRadar_Mgr) Setup The Player
+*******************************************************************************************************************************
+1. Assign the Player transform to the _GameMgr --> FX_3DRadar_Mgr --> Radar Settings --> Player Properties --> Player field.
+2. Assign the Player Camera to the _GameMgr --> FX_3DRadar_Mgr --> Radar Settings --> Player Properties --> Player Camera field.
+3. Set the Radar Layer to the layer you created in the Layer Editor section step 1. !!! Do not leave as the default layer must be unique!!!
+
+
+*******************************************************************************************************************************
+									(FX_Class_Mgr) Create Target Classes & Sub Classes
+*******************************************************************************************************************************
+By Default There Are Two Classes With Sub Classes.
+
+1. Click add new class button to create a new primary Class. Every Class needs a Sub Class. 
+	By default a Sub Class is created automatically. Names can be assigned to Classes and Sub Classes.
+
+2. Assign a Sprite Texture for the Sub Class Icon
+	
+3. To Remove a Sub Class click the "-" button next to the icon.
+4. To Remove a Class click the "-" button next to the Class Name.
+
+Because all Radar UI elements use a Pivot 0,0 & bottom left anchor point to combat sub pixel interpolation the Image / sprite elements need
+be offset inorder to correctly place them at there center points on the screen and not there bottom left point. To do this adjust the following values.
+
+1. HUD ID Center Offset : This is the Icon that will be drawn on the edges of the screen when a target is not in the players view.
+	The offset values should be -1/2 the height & width of the sprite image. Use the Calculate HUD Offset button to estimate this value quickly.
+
+2.Radar ID Center Offset : This is teh Icon that will be drawn in the players Radar.
+	X Horizontal : Used to offset the icon Horizontally in relation to the VDI.
+	Y + Vertical : Used to offset the icon vertically over the VDI when the target ID is above the VDI.
+	Z - Vertical : Used to offset the icon vertically under the VDI when the target ID is below the VDI.
+
+3. Target Selectioin Indicator Center Offset : Used to align the Target Section Indicator (TSI) over the selected target ID icon.
+	Changes to TSI Center Offset are not real time. They will be reflected during target selection.
+
+Note all values will be - values. Because the UI elements are bottom left alligned we want to push them back to the left and down.
+
+Best method to set the offset values is to define them during play mode, copy the component values, exit play mode, & paste component values.
+
+
+*******************************************************************************************************************************	
+									(FX_Faction_Mgr) Create Factions
+*******************************************************************************************************************************
+By default there are two factions "Red Team" & "Blue Team"
+
+1. Add or remove factions by adjusting the number of factions under "Setup Factions" --> "Number Of Factions"
+2. After the faction count has been set names can be assigned under the "Setup Factions" --> "Factions Names"
+3. Adjust the cutoff values for Friendly & Hostile. Any relation values between these numbers will be Neutral.
+3. Set the faction relations under "Set Global Faction Relations" & adjust the values to be Friendly, Neutral, or Hostile.
+
+
+
+*******************************************************************************************************************************	
+									(FX_3DRadar_RID) Adding Targets
+*******************************************************************************************************************************
+Targets can only be created after the above has been completed as targets depend on information from both the "Class Mgr" & "Faction Mgr".
+
+1. Drag the "Target_1" prefab into the scene hierarchy
+2. Set the targets "Class & Sub Class" under "Class Selection" by adjusting the sliders.
+3. Set the targets "Faction" under "Faction Selection" by adjusting the slider.
+4. Set any other desired properties.
+
+Extended Steps For Custom Targets
+5. Assign the Rigidbody component to the Rigidbody field in the inspector under Core Components.
+6. Assign the Primary Renderer object to the Renderer field in the inspector under Core Components.
+7. Assign the Target List Button the the List Button field in the inspector under Core Components. 
+
+The "FX_3DRadar_RID" must resides on the same object as the collider. If not then you not be able to select the target with a mouse pointer.
+Sub Components should only be one level below the parent / "FX_3DRadar_RID" script.
+Every target needs a TargetButton. This can be found in the prefabs folder as "TargetButton".
+
+
+
+
+*******************************************************************************************************************************	
+									(FX_3DRadar_RID) NAV Points
+*******************************************************************************************************************************
+Changing the Radar ID Type to NAV will switch the current object to a NAV waypoint.
+
+NAV points can be marked as activated in two ways:
+   1. Click the "Set NAV Active" button in the inspector
+   2. Call the SetNAVActive() function on the FX_3DRadar_RID script on the NAV object.  
+       Example : MyNavObject.GetComponent<FX_3DRadar_RID>().SetNAVActive(); 
+
+NAV points can be marked as inactive in two ways:
+   1. Click the "Set NAV Inactive" button in the inspector
+   2. Call the SetNAVInactive() function on the FX_3DRadar_RID script on the NAV object.  
+       Example : MyNavObject.GetComponent<FX_3DRadar_RID>().SetNAVInactive(); 
