@@ -42,7 +42,7 @@ public class Movement : MonoBehaviour {
 	public bool landing;
 	public float landingSpeed;
 
-	public bool onLand;
+	public static bool onLand;
 	public Transform gravityBox;
 	public GameObject landPlayer;
 	public Transform playerExit;
@@ -225,7 +225,7 @@ public class Movement : MonoBehaviour {
 			onLand = true;
 			gravityBox.position = col.transform.position;
 			spareX.position = transform.position;
-			spareX.rotation = transform.rotation;
+			//spareX.rotation = transform.rotation;
 			spareX.gameObject.SetActive (true);
 			gameObject.SetActive (false);
 

@@ -67,7 +67,7 @@
      <None Include="Assets\Imported\FX 3D Radar\Shaders\RadarSphere.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlendedFast.shader" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>/Users/Swash/Desktop/StarWarsTest/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>/Users/Swash/SpaceProto/StarWarsTest/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>

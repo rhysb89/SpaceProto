@@ -141,7 +141,7 @@ public class FX_3DRadar_RID : MonoBehaviour {
 	void LateUpdate() {
 	
 		//Disable Target Radar Elements If The Players Radar Is Disabled
-	
+
 		if (!FX3DRM.RadarEnabled){
 			if(Enabled){
 				DisableThis();

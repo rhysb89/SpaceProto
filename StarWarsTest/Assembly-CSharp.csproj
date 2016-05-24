@@ -76,12 +76,14 @@
      <Compile Include="Assets\Scripts\AITrig.cs" />
      <Compile Include="Assets\Scripts\CameraScipt.cs" />
      <Compile Include="Assets\Scripts\ExplosionLife.cs" />
+     <Compile Include="Assets\Scripts\Gravity.cs" />
      <Compile Include="Assets\Scripts\LandMovement.cs" />
      <Compile Include="Assets\Scripts\Laser.cs" />
      <Compile Include="Assets\Scripts\LaserLife.cs" />
      <Compile Include="Assets\Scripts\LockOn.cs" />
      <Compile Include="Assets\Scripts\LockOnRocket.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\RadarIndicator.cs" />
      <Compile Include="Assets\Scripts\ReticleBehavior.cs" />
      <Compile Include="Assets\Scripts\RocketLife.cs" />
      <Compile Include="Assets\Scripts\RocketMovement.cs" />
