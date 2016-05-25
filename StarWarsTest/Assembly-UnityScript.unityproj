@@ -46,14 +46,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Imported\FX 3D Radar\Scripts\Demo Scripts\Orbit1.js" />
-     <Compile Include="Assets\SphericalTerrain\Scripts\Utility\CameraScript.js" />
-     <None Include="Assets\SphericalTerrain\Shaders\SplatMap.shader" />
-     <None Include="Assets\SphericalTerrain\Shaders\Projector Multiply.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlended.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAdditive.shader" />
      <None Include="Assets\Imported\FX 3D Radar\Setup.txt" />
-     <None Include="Assets\SphericalTerrain\Readme.txt" />
-     <None Include="Assets\SphericalTerrain\Shaders\Projector Light.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAdditiveFast.shader" />
      <None Include="Assets\Imported\VC_StarPack.2\VC_StarPack\Install Notes.txt" />
      <None Include="Assets\Imported\FX 3D Radar\Using Target Lead.txt" />
@@ -61,7 +56,6 @@
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineStripShaderAlphaBlended.shader" />
      <None Include="Assets\Imported\FX 3D Radar\Shaders\RadarSphere.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlendedFast.shader" />
-     <None Include="Assets\SphericalTerrain\Shaders\SampleSphereTerrainShader.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

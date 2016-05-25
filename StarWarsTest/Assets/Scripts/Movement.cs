@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour {
 	public Slider healthSlider;
 
 	public bool inPlanet;
-	public bool landing;
+	public bool landing = false;
 	public float landingSpeed;
 
 	public static bool onLand;
@@ -54,7 +54,7 @@ public class Movement : MonoBehaviour {
 		spareX.gameObject.SetActive (false);
 		onLand = false;
 		inPlanet = false;
-		landing = false;
+		//landing = false;
 		travellingLight = false;
 		shieldDepleted = false;
 		hit = false;
@@ -140,7 +140,11 @@ public class Movement : MonoBehaviour {
 					speed = maxSpeed;
 				}
 			}
+			if (Input.GetButtonDown ("Land") && inPlanet) {
 
+				landing = true;
+
+			}
 
 			if (landing) {
 
@@ -172,12 +176,7 @@ public class Movement : MonoBehaviour {
 			speed += acceleration;
 			//rb.angularVelocity = (new Vector3 (0, 0, -speed) * Time.deltaTime);
 		}
-		if (Input.GetButtonDown ("Land") && inPlanet) {
 
-			landing = true;
-
-		
-		}
 	
 	
 	}

@@ -7,6 +7,8 @@ Project("{7F0D3586-C626-52F6-7AB3-AB062F50D2F9}") = "StarWarsTest", "Assembly-CS
 EndProject
 Project("{7F0D3586-C626-52F6-7AB3-AB062F50D2F9}") = "StarWarsTest", "Assembly-CSharp-Editor.csproj", "{291B5842-3616-C25B-F254-351A9659F5AD}"
 EndProject
+Project("{7F0D3586-C626-52F6-7AB3-AB062F50D2F9}") = "StarWarsTest", "Assembly-UnityScript.unityproj", "{302C740F-C84C-8208-C172-8993734199E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{291B5842-3616-C25B-F254-351A9659F5AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{291B5842-3616-C25B-F254-351A9659F5AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{291B5842-3616-C25B-F254-351A9659F5AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{302C740F-C84C-8208-C172-8993734199E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302C740F-C84C-8208-C172-8993734199E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302C740F-C84C-8208-C172-8993734199E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302C740F-C84C-8208-C172-8993734199E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

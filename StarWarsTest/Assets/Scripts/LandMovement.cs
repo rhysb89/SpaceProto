@@ -15,9 +15,18 @@ public class LandMovement : MonoBehaviour {
 	private float yRotation;
 
 	public GameObject flightCanvas;
+
+	public bool canShip;
+
+	public GameObject airPlayer;
+	public GameObject landShip;
+
+	public Movement airMove;
 	// Use this for initialization
 	void Start () {
-
+		canShip = true;
+		//airPlayer.SetActive (false);
+		//landShip.SetActive (true);
 	}
 	
 	// Update is called once per frame
@@ -59,6 +68,35 @@ public class LandMovement : MonoBehaviour {
 
 		transform.Rotate(xRot, yRot, 0.0f);
 
+		if (canShip && Input.GetButton ("BoardShip")) {
+		
+			grounded = false;
 
+			airPlayer.SetActive (true);
+			airPlayer.transform.position = new Vector3 (landShip.transform.position.x, landShip.transform.position.y + 10, landShip.transform.position.z);
+			airPlayer.transform.rotation = landShip.transform.rotation;
+			landShip.SetActive (false);
+			Movement.onLand = false;
+			airMove.landing = false;
+			flightCanvas.SetActive (true);
+			this.gameObject.SetActive (false);
+
+
+		}
+
+	}
+	void OnTriggerEnter (Collider col){
+	
+		if (col.tag == "Player") {
+		
+			canShip = true;
+		}
+	}
+	void OnTriggerExit(Collider col){
+
+		if (col.tag == "Player") {
+
+			canShip = false;
+		}
 	}
 }

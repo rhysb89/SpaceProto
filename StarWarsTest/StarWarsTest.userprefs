@@ -1,17 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Imported/FX 3D Radar/Scripts/FX_Mission.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SkySphere_V1\Meshes\NewSurfaceShader.shader">
     <Files>
-      <File FileName="Assets/Scripts/LockOnRocket.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AI.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Laser.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Movement.cs" Line="45" Column="16" />
-      <File FileName="Assets/Scripts/LandMovement.cs" Line="33" Column="35" />
-      <File FileName="Assets/Scripts/Gravity.cs" Line="8" Column="8" />
-      <File FileName="Assets/Scripts/RadarIndicator.cs" Line="9" Column="32" />
-      <File FileName="Assets/Imported/FX 3D Radar/Scripts/FX_3DRadar_RID.cs" Line="102" Column="37" />
-      <File FileName="Assets/Imported/FX 3D Radar/Scripts/FX_3DRadar_Mgr.cs" Line="462" Column="57" />
-      <File FileName="Assets/Imported/FX 3D Radar/Scripts/FX_Mission.cs" Line="57" Column="37" />
+      <File FileName="Assets\SkySphere_V1\Meshes\NewSurfaceShader.shader" Line="1" Column="27" />
+      <File FileName="Assets\Imported\MiniMap\Scripts\MapCanvasController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Gravity.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LockOnRocket.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Laser.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Movement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LandMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\RadarIndicator.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
