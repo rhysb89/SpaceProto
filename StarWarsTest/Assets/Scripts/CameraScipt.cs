@@ -19,6 +19,7 @@ public class CameraScipt : MonoBehaviour {
 		float tiltAroundX = Input.GetAxis ("Vertical") * tiltAngle;
 		var target = Quaternion.Euler (tiltAroundX, 0, tiltAroundZ);
 
+
 		transform.localRotation = Quaternion.Slerp (transform.localRotation, target, Time.deltaTime * smooth);
 	
 	}

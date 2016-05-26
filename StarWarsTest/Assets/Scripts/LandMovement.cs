@@ -15,6 +15,7 @@ public class LandMovement : MonoBehaviour {
 	private float yRotation;
 
 	public GameObject flightCanvas;
+	public GameObject landCanvas;
 
 	public bool canShip;
 
@@ -22,11 +23,13 @@ public class LandMovement : MonoBehaviour {
 	public GameObject landShip;
 
 	public Movement airMove;
+	public static float takeOffSpeed;
 	// Use this for initialization
 	void Start () {
 		canShip = true;
 		//airPlayer.SetActive (false);
 		//landShip.SetActive (true);
+		landCanvas.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -40,6 +43,7 @@ public class LandMovement : MonoBehaviour {
 		if (grounded)
 		{
 			flightCanvas.SetActive (false);
+			landCanvas.SetActive(true);
 			// Calculate how fast we should be moving
 			Vector3 forward = Vector3.Cross(transform.up, -LookTransform.right).normalized;
 			Vector3 right = Vector3.Cross(transform.up, LookTransform.forward).normalized;
@@ -62,24 +66,28 @@ public class LandMovement : MonoBehaviour {
 			}
 		}
 
-		float rotSpeed = 3.0f;
-		float xRot = rotSpeed * Input.GetAxis("Vertical");
-		float yRot = rotSpeed * Input.GetAxis("Horizontal");
 
-		transform.Rotate(xRot, yRot, 0.0f);
+		float rotSpeed = 3.0f;
+		float xRot = rotSpeed * Input.GetAxis("Horizontal");
+		//float yRot = rotSpeed * Input.GetAxis("Horizontal");
+
+		transform.Rotate(0, xRot, 0.0f);
 
 		if (canShip && Input.GetButton ("BoardShip")) {
 		
+			airMove.speed = takeOffSpeed;
 			grounded = false;
-
+			takeOffSpeed = 1f;
 			airPlayer.SetActive (true);
-			airPlayer.transform.position = new Vector3 (landShip.transform.position.x, landShip.transform.position.y + 10, landShip.transform.position.z);
+			airPlayer.transform.position = new Vector3 (landShip.transform.position.x, landShip.transform.localPosition.y +5, landShip.transform.position.z);
 			airPlayer.transform.rotation = landShip.transform.rotation;
 			landShip.SetActive (false);
 			Movement.onLand = false;
 			airMove.landing = false;
 			flightCanvas.SetActive (true);
+			landCanvas.SetActive(false);
 			this.gameObject.SetActive (false);
+
 
 
 		}
@@ -87,14 +95,14 @@ public class LandMovement : MonoBehaviour {
 	}
 	void OnTriggerEnter (Collider col){
 	
-		if (col.tag == "Player") {
+		if (col.tag == "XWing") {
 		
 			canShip = true;
 		}
 	}
 	void OnTriggerExit(Collider col){
 
-		if (col.tag == "Player") {
+		if (col.tag == "XWing") {
 
 			canShip = false;
 		}

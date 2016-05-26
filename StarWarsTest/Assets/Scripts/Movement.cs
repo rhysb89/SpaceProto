@@ -48,6 +48,8 @@ public class Movement : MonoBehaviour {
 	public Transform playerExit;
 	public Transform spareX;
 
+	public GameObject landingGear;
+
 	// Use this for initialization
 	void Start () {
 		landPlayer.SetActive (false);
@@ -65,11 +67,17 @@ public class Movement : MonoBehaviour {
 
 		rb.AddForce (new Vector3 (0, 0, startSpeed));
 		InvokeRepeating ("Allowed", 1f, 1f);
+		landingGear.SetActive (false);
 
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		if (onLand) {
+			speed = LandMovement.takeOffSpeed;
+		}
+
 		if (!onLand) {
 			ReticleBehavior ReticleScript = Camera.main.GetComponent<ReticleBehavior> ();
 			//reticle.localPosition = reticleCentre;
@@ -142,19 +150,23 @@ public class Movement : MonoBehaviour {
 			}
 			if (Input.GetButtonDown ("Land") && inPlanet) {
 
-				landing = true;
+				landing = !landing;
 
 			}
 
 			if (landing) {
 
-				speed = 0;
-				rigidbody.velocity = transform.TransformVector (0, -1, 0) * (Time.deltaTime * landingSpeed);
-
+				landingGear.SetActive (true);
+				//speed = 10;
+				//transform.position = Vector3.MoveTowards (transform.position, gravityBox.position, landingSpeed * Time.deltaTime);// * (Time.deltaTime * landingSpeed);
 			}
-			if (!landing) {
+			//}
+				if (!landing) {
+					landingGear.SetActive (false);
+				}
+					
 				rigidbody.velocity = AddPos * (Time.deltaTime * speed);
-			}
+			//}
 		}
 	}
 	void CheckInputs(){
@@ -299,7 +311,10 @@ public class Movement : MonoBehaviour {
 
 			inPlanet = true;
 			travellingLight = false;
-			speed = maxSpeed;
+
+			if (travellingLight) {
+				speed = maxSpeed;
+			}
 		
 		}
 	}

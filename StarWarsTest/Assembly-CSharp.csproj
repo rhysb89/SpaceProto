@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_1;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_3;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -38,30 +38,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DestroyExplosionLife.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\ExampleScripts\DestroyThis.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\ExampleScripts\FactionRelations.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\ExampleScripts\TargetStatus.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\FX_3DRadar_Mgr.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\FX_3DRadar_RID.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\FX_Class_Mgr.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\FX_Faction_Mgr.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\FX_Input_Mgr.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\FX_Mission.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\FX_Mission_Giver.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\FX_Mission_Mgr.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\FX_MouseSelect.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\MouseLook.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\Utilities\DisableMR.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\Utilities\FX_Util_BoundingArea.cs" />
-     <Compile Include="Assets\Imported\FX 3D Radar\Scripts\WIKI Scripts\TargetLead.cs" />
      <Compile Include="Assets\Imported\MiniMap\Scripts\InnerMap.cs" />
      <Compile Include="Assets\Imported\MiniMap\Scripts\MapArrow.cs" />
      <Compile Include="Assets\Imported\MiniMap\Scripts\MapCanvasController.cs" />
@@ -79,7 +63,9 @@
      <Compile Include="Assets\Scripts\AI.cs" />
      <Compile Include="Assets\Scripts\AILaserLife.cs" />
      <Compile Include="Assets\Scripts\AITrig.cs" />
+     <Compile Include="Assets\Scripts\AimLead.cs" />
      <Compile Include="Assets\Scripts\CameraScipt.cs" />
+     <Compile Include="Assets\Scripts\DestroyExplosionLife.cs" />
      <Compile Include="Assets\Scripts\ExplosionLife.cs" />
      <Compile Include="Assets\Scripts\Gravity.cs" />
      <Compile Include="Assets\Scripts\LandMovement.cs" />
@@ -88,25 +74,48 @@
      <Compile Include="Assets\Scripts\LockOn.cs" />
      <Compile Include="Assets\Scripts\LockOnRocket.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\Pistol.cs" />
+     <Compile Include="Assets\Scripts\PistolLaserLife.cs" />
+     <Compile Include="Assets\Scripts\PistolReticle.cs" />
      <Compile Include="Assets\Scripts\RadarIndicator.cs" />
      <Compile Include="Assets\Scripts\ReticleBehavior.cs" />
      <Compile Include="Assets\Scripts\RocketLife.cs" />
      <Compile Include="Assets\Scripts\RocketMovement.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\MainScripts\EditorClass.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\MainScripts\PlanetStatisticsClass.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\MainScripts\ProjectorClass.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\MainScripts\ToolsClass.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\MainScripts\UIClass.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\Utility\FauxGravity\FauxGravityAttractor.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\Utility\FauxGravity\FauxGravityBody.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\Utility\NewUI\GetSliderValue.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\Utility\Noise.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\Utility\OceanController.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\Utility\PlanetHelpers.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\Utility\RotateAround.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\Utility\SaveMesh.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\Utility\SphericalMovement.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\Utility\ToggleGO.cs" />
+     <Compile Include="Assets\SphericalTerrain\Scripts\Utility\WindowIDManager.cs" />
+     <None Include="Assets\SphericalTerrain\Shaders\SplatMap.shader" />
+     <None Include="Assets\SphericalTerrain\Shaders\Projector Multiply.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlended.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAdditive.shader" />
      <None Include="Assets\Imported\FX 3D Radar\Setup.txt" />
+     <None Include="Assets\SphericalTerrain\Readme.txt" />
+     <None Include="Assets\SphericalTerrain\Shaders\Projector Light.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAdditiveFast.shader" />
      <None Include="Assets\Imported\VC_StarPack.2\VC_StarPack\Install Notes.txt" />
      <None Include="Assets\Imported\FX 3D Radar\Using Target Lead.txt" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineStripShaderAdditive.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineStripShaderAlphaBlended.shader" />
-     <None Include="Assets\Imported\FX 3D Radar\Shaders\RadarSphere.shader" />
      <None Include="Assets\Imported\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlendedFast.shader" />
+     <None Include="Assets\SphericalTerrain\Shaders\SampleSphereTerrainShader.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

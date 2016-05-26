@@ -29,7 +29,7 @@ public class ReticleBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Screen.lockCursor = true;
+		//Screen.lockCursor = true;
 		camera = GetComponent<Camera> ();
 		canLockOn = false;
 		lockOnReticle.SetActive (false);
@@ -41,7 +41,6 @@ public class ReticleBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
 
 		Vector3 screenPos = camera.WorldToScreenPoint (target.position);
 		reticle.position = screenPos;
@@ -98,9 +97,7 @@ public class ReticleBehavior : MonoBehaviour {
 
 		}
 	
-		if (Input.GetKeyDown (KeyCode.Escape)) {
-			Screen.lockCursor = false;
-		}
+	
 		if (lockedOn) {
 			target.position = hitInfo.transform.position;
 			targetObject = hitInfo.transform.gameObject;
