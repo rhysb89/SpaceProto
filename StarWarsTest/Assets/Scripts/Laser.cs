@@ -82,7 +82,7 @@ public class Laser : MonoBehaviour {
 			time = fireSpeed / distance;
 		
 
-			leadAim.position = (targetVel.normalized * time) + target.transform.position;
+			leadAim.position = (targetVel.normalized * time * 2) + target.transform.position;
 	
 
 			firePos.LookAt (leadAim);
@@ -136,7 +136,7 @@ public class Laser : MonoBehaviour {
 		}
 		else {
 //			overHeat = overHeat;
-			Debug.Log ("Started Firing again");
+			//Debug.Log ("Started Firing again");
 			return;
 		}
 	}

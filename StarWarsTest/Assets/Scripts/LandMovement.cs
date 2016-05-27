@@ -24,12 +24,17 @@ public class LandMovement : MonoBehaviour {
 
 	public Movement airMove;
 	public static float takeOffSpeed;
+
+	//public Transform target;
+	public Transform reticle;
+	public Vector3 reticleCentre;
 	// Use this for initialization
 	void Start () {
 		canShip = true;
 		//airPlayer.SetActive (false);
 		//landShip.SetActive (true);
 		landCanvas.SetActive(false);
+		reticleCentre = reticle.localPosition;
 	}
 	
 	// Update is called once per frame
@@ -49,7 +54,7 @@ public class LandMovement : MonoBehaviour {
 			Vector3 right = Vector3.Cross(transform.up, LookTransform.forward).normalized;
 			Vector3 targetVelocity = (forward * Input.GetAxis("Speed") + right * Input.GetAxis("WalkHorizontal")) * speed;
 
-			Vector3 velocity = transform.InverseTransformDirection(rb.velocity);
+			Vector3 velocity = LookTransform.transform.InverseTransformDirection(rb.velocity);
 			velocity.y = 0;
 			velocity = transform.TransformDirection(velocity);
 			Vector3 velocityChange = transform.InverseTransformDirection(targetVelocity - velocity);
@@ -71,7 +76,10 @@ public class LandMovement : MonoBehaviour {
 		float xRot = rotSpeed * Input.GetAxis("Horizontal");
 		//float yRot = rotSpeed * Input.GetAxis("Horizontal");
 
+
 		transform.Rotate(0, xRot, 0.0f);
+
+	
 
 		if (canShip && Input.GetButton ("BoardShip")) {
 		

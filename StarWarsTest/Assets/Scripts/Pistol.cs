@@ -63,11 +63,11 @@ public class Pistol : MonoBehaviour {
 			if (Input.GetAxis ("Fire1") > 0.8f && canFire && !overHeated) {
 				//fireSpeed += moveScript.speed/10;
 				for (int i = 0; i < 1; i++) {
-					
+				Debug.Log ("Fired");
 					firing = true;
 					firePos.LookAt (fireBox);
 					laserBeam = Instantiate (laser, transform.position, transform.rotation) as GameObject;
-					laserBeam.GetComponent<Rigidbody> ().velocity = (fireBox.position - transform.position).normalized * fireSpeed;
+					laserBeam.GetComponent<Rigidbody> ().velocity = new Vector3 (transform.localPosition.x,transform.localPosition.y,transform.localPosition.z + fireSpeed);
 			
 					overHeat = overHeat + 20;
 					canFire = false;
@@ -94,7 +94,7 @@ public class Pistol : MonoBehaviour {
 		}
 		else {
 
-			Debug.Log ("Started Firing again");
+			//Debug.Log ("Started Firing again");
 			return;
 		}
 	}

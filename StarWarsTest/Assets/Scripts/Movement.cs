@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityStandardAssets.ImageEffects;
 
 public class Movement : MonoBehaviour {
 
@@ -49,6 +50,9 @@ public class Movement : MonoBehaviour {
 	public Transform spareX;
 
 	public GameObject landingGear;
+	public Fisheye fish;
+	public GameObject particles;
+
 
 	// Use this for initialization
 	void Start () {
@@ -146,7 +150,36 @@ public class Movement : MonoBehaviour {
 
 				if (!travellingLight) {
 					speed = maxSpeed;
+
 				}
+			}
+			if (travellingLight) {
+				if (fish.strengthY < 0.8f) {
+					fish.strengthY += 0.8f * Time.deltaTime;
+					Camera.main.fieldOfView += 40 * Time.deltaTime;
+				}
+				if (fish.strengthY > 0.8f) {
+					fish.strengthY = 0.8f;
+					Camera.main.fieldOfView = 100;
+				
+				}
+				particles.SetActive (true);
+
+
+			} else {
+
+				if (fish.strengthY > 0) {
+					fish.strengthY -= 1.6f * Time.deltaTime;
+					Camera.main.fieldOfView -= 80 * Time.deltaTime;
+				}
+				if (fish.strengthY < 0){
+					fish.strengthY = 0;
+					Camera.main.fieldOfView = 60;
+
+				}
+				particles.SetActive (false);
+
+			
 			}
 			if (Input.GetButtonDown ("Land") && inPlanet) {
 

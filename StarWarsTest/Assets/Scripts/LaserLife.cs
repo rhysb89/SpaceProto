@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LaserLife : MonoBehaviour {
 	public float lifetime;
+	public GameObject hitExplosion;
 	// Use this for initialization
 	void Start () {
 	
@@ -13,15 +14,21 @@ public class LaserLife : MonoBehaviour {
 		Destroy (gameObject, lifetime);
 
 	}
-	void OnTriggerEnter(Collider col){
+	void OnCollisionEnter(Collision col){
 
+		ContactPoint point = col.contacts[0];
+		Vector3 impactPoint = point.point;
 
-		if (col.tag != "Laser") {
-			if (col.tag != "Enemy") {
-//			Debug.Log (col.tag);
-				Destroy (gameObject);
+		if (col.transform.tag != "Planet") {
+			if (col.transform.tag != "Laser") {
+				GameObject explosion = Instantiate (hitExplosion, impactPoint, transform.rotation) as GameObject;
+				if (col.transform.tag != "Enemy") {
+			//Debug.Log (col.transform.tag);
+
+					Destroy (gameObject);
+				}
+
 			}
-
 		}
 	}
 }
