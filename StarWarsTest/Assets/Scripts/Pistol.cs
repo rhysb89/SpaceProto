@@ -10,7 +10,7 @@ public class Pistol : MonoBehaviour {
 	public bool canFire;
 	public LandMovement moveScript;
 
-	public Transform fireBox;
+	//public Transform fireBox;
 	//GameObject target;
 
 	//public Transform leadAim;
@@ -19,6 +19,7 @@ public class Pistol : MonoBehaviour {
 	public bool overHeated;
 	//public Slider laserSlider;
 	public bool firing;
+	public Camera myCamera;
 
 	// Use this for initialization
 	void Start () {
@@ -62,17 +63,27 @@ public class Pistol : MonoBehaviour {
 
 			if (Input.GetAxis ("Fire1") > 0.8f && canFire && !overHeated) {
 				//fireSpeed += moveScript.speed/10;
-				for (int i = 0; i < 1; i++) {
+			for (int i = 0; i < 1; i++) {
 				Debug.Log ("Fired");
+				//Vector3 screenSpaceCenter = new Vector3(0.5f, 0.5f, 0);
+				//Vector3 laserEnd = Camera.main.ViewportToWorldPoint(screenSpaceCenter);
+
+				float x = Screen.width / 2;
+				float y = Screen.height / 2;
+
+				Ray ray = myCamera.ScreenPointToRay(new Vector3(x, y, 0));
+
 					firing = true;
-					firePos.LookAt (fireBox);
+					//firePos.LookAt (fireBox);
 					laserBeam = Instantiate (laser, transform.position, transform.rotation) as GameObject;
-					laserBeam.GetComponent<Rigidbody> ().velocity = new Vector3 (transform.localPosition.x,transform.localPosition.y,transform.localPosition.z + fireSpeed);
+				//laserBeam.GetComponent<Rigidbody> ().velocity = new Vector3 (transform.localPosition.x,transform.localPosition.y,ray.z + fireSpeed);
+					laserBeam.GetComponent<Rigidbody> ().velocity = ray.direction * fireSpeed;
 			
 					overHeat = overHeat + 20;
 					canFire = false;
 					Invoke ("FireDelay", 0.5f);
 				}
+
 
 			}
 	

@@ -37,9 +37,7 @@ public class CameraTest : MonoBehaviour {
 
 	// Update is called once per frame
 	void LateUpdate () {
-		if (Input.GetMouseButton (1)) {/*0 mouse btn izq, 1 mouse btn der*/
-
-		}else if (Input.GetAxis("Vertical") != 0 )
+		 if (Input.GetAxis("Vertical") != 0 )
 		{
 
 			x += Input.GetAxis("Vertical") * mouseXSpeedMod;

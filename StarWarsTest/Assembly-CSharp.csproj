@@ -76,6 +76,8 @@
      <Compile Include="Assets\Imported\VolumetricLines\Scripts\VolumetricLineStripBehavior.cs" />
      <Compile Include="Assets\Imported\VolumetricLines\Scripts\VolumetricMultiLineBehavior.cs" />
      <Compile Include="Assets\Scripts\AI.cs" />
+     <Compile Include="Assets\Scripts\AIGravity.cs" />
+     <Compile Include="Assets\Scripts\AIGround.cs" />
      <Compile Include="Assets\Scripts\AILaserLife.cs" />
      <Compile Include="Assets\Scripts\AITrig.cs" />
      <Compile Include="Assets\Scripts\AimLead.cs" />

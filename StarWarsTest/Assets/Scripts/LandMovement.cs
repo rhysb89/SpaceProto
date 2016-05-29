@@ -26,15 +26,15 @@ public class LandMovement : MonoBehaviour {
 	public static float takeOffSpeed;
 
 	//public Transform target;
-	public Transform reticle;
-	public Vector3 reticleCentre;
+	//public Transform reticle;
+	//public Vector3 reticleCentre;
 	// Use this for initialization
 	void Start () {
-		canShip = true;
+		//canShip = true;
 		//airPlayer.SetActive (false);
 		//landShip.SetActive (true);
 		landCanvas.SetActive(false);
-		reticleCentre = reticle.localPosition;
+		//reticleCentre = reticle.localPosition;
 	}
 	
 	// Update is called once per frame
