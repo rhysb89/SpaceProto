@@ -32,8 +32,15 @@ public class AIGround : MonoBehaviour {
 	}
 	void Update () {
 		timer += Time.deltaTime;
+		Animator anim = GetComponentInChildren <Animator> ();
+		float desired_distance = 10.0f;
+		Vector3 stop_direction = transform.position-player.transform.position;
+
+		Vector3 desired_position = player.transform.position+(stop_direction.normalized*desired_distance);
 
 		if (timer >= wanderTimer && !hasTarget) {
+
+			anim.SetBool ("Move", true);
 			Vector3 newPos = RandomNavSphere(startOrigin.position, wanderRadius, -1);
 			agent.SetDestination(newPos);
 			timer = 0;
@@ -55,9 +62,25 @@ public class AIGround : MonoBehaviour {
 		}
 		if (hasTarget) {
 			transform.LookAt (player);
-			agent.SetDestination(player.position);
+
+
+
+			agent.SetDestination(desired_position);
+			anim.SetBool ("Move", false);
+			anim.SetBool ("Shoot", true);
 			Shoot ();
 		
+		}
+		if (health <10){
+
+			anim.SetBool ("Move", true);
+			anim.SetBool ("Shoot", false);
+			desired_distance = 30f; 
+			//hasTarget = false;
+		}
+		if (transform.position == desired_position) {
+		
+			anim.SetBool ("Move", false);
 		}
 
 	}
@@ -75,7 +98,7 @@ public class AIGround : MonoBehaviour {
 
 
 	public void Shoot () {
-
+		
 		RaycastHit hit;
 
 		if (Physics.SphereCast(gun.position, 10f, transform.forward, out hit, sightRange)){// Vector3.forward, out hit, sightRange)){
@@ -115,13 +138,7 @@ public class AIGround : MonoBehaviour {
 			Invoke ("Explodes", 0.5f);
 
 		}
-		if (col.transform.tag == "Rocket") {
-
-			Destroy (col.gameObject);
-
-			health -= health;
-			Invoke ("Explodes", 0.5f);
-		}
+	
 
 
 	}
