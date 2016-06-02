@@ -10,7 +10,7 @@ public class AIGround : MonoBehaviour {
 	private Transform target;
 	private NavMeshAgent agent;
 	private float timer;
-	public FX_3DRadar_RID marker;
+	//public FX_3DRadar_RID marker;
 
 	private bool canFire;
 	private bool hasTarget = false;
@@ -24,65 +24,69 @@ public class AIGround : MonoBehaviour {
 	public Transform startOrigin;
 	public Transform player;
 
+	public bool dead;
+	public Vector3 desired_position;
+	public GameObject explodeDebris;
+	public float explodePower;
+	public float explodeRadius;
+	public float desired_distance;
+	//public Transform explodePoint;
+
 	void OnEnable(){
 		canFire = true;
 		agent = GetComponent<NavMeshAgent> ();
 		timer = wanderTimer;
+		dead = false;
+		desired_distance = 20f;
 
 	}
 	void Update () {
 		timer += Time.deltaTime;
-		Animator anim = GetComponentInChildren <Animator> ();
-		float desired_distance = 10.0f;
+
 		Vector3 stop_direction = transform.position-player.transform.position;
 
-		Vector3 desired_position = player.transform.position+(stop_direction.normalized*desired_distance);
+		desired_position = player.transform.position+(stop_direction.normalized*desired_distance);
+		if (!dead) {
+			if (timer >= wanderTimer && !hasTarget) {
 
-		if (timer >= wanderTimer && !hasTarget) {
-
-			anim.SetBool ("Move", true);
-			Vector3 newPos = RandomNavSphere(startOrigin.position, wanderRadius, -1);
-			agent.SetDestination(newPos);
-			timer = 0;
-		}
-		AITrig trig = GetComponentInParent<AITrig> ();
+				Vector3 newPos = RandomNavSphere (startOrigin.position, wanderRadius, -1);
+				agent.SetDestination (newPos);
+				timer = 0;
+			}
+			AITrig trig = GetComponentInParent<AITrig> ();
 
 
-		if (trig.inTrig) {
-			hasTarget = true;
-		} else {
-			hasTarget = false;
+			if (trig.inTrig) {
+				hasTarget = true;
+			} else {
+				hasTarget = false;
+			}
+	
+			if (hasTarget) {
+
+				transform.LookAt (player);
+				agent.SetDestination (desired_position);
+			
+				Shoot ();
+		
+			}
+
+
 		}
 		if (health <= 0) {
-
-			marker.DestroyThis ();
 		
+			//marker.DestroyThis ();
+			GameObject debris = Instantiate (explodeDebris, this.transform.position, this.transform.rotation) as GameObject;
+			explodeDebris.transform.position = this.transform.position;
+			Rigidbody rb = debris.GetComponent<Rigidbody> ();
+			if (rb != null) {
+				rb.AddExplosionForce (explodePower, transform.position, explodeRadius, 3f);
+			}
 			gameObject.SetActive (false);
+			dead = true;
 
-		}
-		if (hasTarget) {
-			transform.LookAt (player);
-
-
-
-			agent.SetDestination(desired_position);
-			anim.SetBool ("Move", false);
-			anim.SetBool ("Shoot", true);
-			Shoot ();
 		
 		}
-		if (health <10){
-
-			anim.SetBool ("Move", true);
-			anim.SetBool ("Shoot", false);
-			desired_distance = 30f; 
-			//hasTarget = false;
-		}
-		if (transform.position == desired_position) {
-		
-			anim.SetBool ("Move", false);
-		}
-
 	}
 	public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask) {
 		Vector3 randDirection = Random.insideUnitSphere * dist;
@@ -98,16 +102,15 @@ public class AIGround : MonoBehaviour {
 
 
 	public void Shoot () {
-		
+
 		RaycastHit hit;
 
 		if (Physics.SphereCast(gun.position, 10f, transform.forward, out hit, sightRange)){// Vector3.forward, out hit, sightRange)){
 
 			if (hit.transform.tag == "Player" && canFire) {
 				for (int i = 0; i < 1; i++) {
-					
 
-					gun.LookAt (GameObject.FindGameObjectWithTag("Player").transform);
+					gun.LookAt (GameObject.FindGameObjectWithTag ("Player").transform);
 				
 					GameObject laserBeam = Instantiate (bullet, gun.position, gun.rotation) as GameObject;
 
@@ -118,9 +121,9 @@ public class AIGround : MonoBehaviour {
 					canFire = false;
 					i = 0;
 			
-					Invoke ("FireDelay", 0.5f);
+					Invoke ("FireDelay", 1f);
 				}
-			}
+			} 
 		}
 	}
 

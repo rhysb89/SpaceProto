@@ -214,7 +214,7 @@ public class Movement : MonoBehaviour {
 			speed += acceleration;
 			//rb.angularVelocity = (new Vector3 (0, 0, speed) *Time.deltaTime);
 		}
-		if (Input.GetAxis("Speed") < 0 && speed > 1){
+		if (Input.GetAxis("Speed") < 0 && speed > 1000){
 
 			acceleration = Input.GetAxis("Speed") * 40;
 
@@ -264,7 +264,7 @@ public class Movement : MonoBehaviour {
 			Hit ();
 		
 		}
-		if (col.transform.tag == "Asteroid" && landing) {
+		if (col.transform.tag == "Asteroid" && landing && speed <= startSpeed) {
 		
 			onLand = true;
 			gravityBox.position = col.transform.position;
@@ -349,6 +349,15 @@ public class Movement : MonoBehaviour {
 				speed = maxSpeed;
 			}
 		
+		}
+		if (col.tag == "Slow") {
+
+			travellingLight = false;
+
+			if (travellingLight) {
+				speed = maxSpeed;
+			}
+
 		}
 	}
 	void OnTriggerExit (Collider col){

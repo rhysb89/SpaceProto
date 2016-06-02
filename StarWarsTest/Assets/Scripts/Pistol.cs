@@ -79,7 +79,7 @@ public class Pistol : MonoBehaviour {
 				//laserBeam.GetComponent<Rigidbody> ().velocity = new Vector3 (transform.localPosition.x,transform.localPosition.y,ray.z + fireSpeed);
 					laserBeam.GetComponent<Rigidbody> ().velocity = ray.direction * fireSpeed;
 			
-					overHeat = overHeat + 20;
+					overHeat = overHeat + 5;
 					canFire = false;
 					Invoke ("FireDelay", 0.5f);
 				}

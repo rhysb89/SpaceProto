@@ -153,12 +153,17 @@ public class AI : MonoBehaviour {
 		}
 		if (health <= 0) {
 
+			if (StationTrig.missionStarted) {
+				StationTrig.killCount += 1;
+				Debug.Log (StationTrig.killCount);
+			}
+
 			marker.DestroyThis ();
 			GameObject debris = Instantiate (explodeDebris, this.transform.position, explodePoint.transform.rotation) as GameObject;
 			explodeDebris.transform.position = this.transform.position;
 			Rigidbody rb = debris.GetComponent<Rigidbody> ();
 			if (rb != null) {
-				//rb.AddExplosionForce (explodePower, explodePoint.transform.position, explodeRadius, 3f);
+				rb.AddExplosionForce (explodePower, explodePoint.transform.position, explodeRadius, 3f);
 			}
 			gameObject.SetActive (false);
 		
@@ -186,7 +191,7 @@ public class AI : MonoBehaviour {
 
 
 				canFire = false;
-					i = 0;
+				//	i = 0;
 				//audio.PlayOneShot(shot);
 				Invoke ("FireDelay", 0.5f);
 			}
@@ -230,9 +235,9 @@ public class AI : MonoBehaviour {
 		}
 		if (col.transform.tag == "Rocket") {
 			//Debug.Log ("Hit");
-		//	Vector3 impactPoint = col.transform.position;
+			Vector3 impactPoint = col.transform.position;
 			Destroy (col.gameObject);
-			//GameObject explosion = Instantiate (hitExplosion, impactPoint, transform.rotation) as GameObject;
+			GameObject explosion = Instantiate (hitExplosion, impactPoint, transform.rotation) as GameObject;
 			health -= health;
 			Invoke ("Explodes", 0.5f);
 		}
@@ -256,7 +261,7 @@ public class AI : MonoBehaviour {
 			Invoke ("Explodes", 0.5f);
 		
 		}
-		if (col.transform.tag == "Asteroid") {
+		if (col.transform.tag == "Asteroid" && hasTarget) {
 
 			Rigidbody enemyHit = col.gameObject.GetComponent <Rigidbody> ();
 			Vector3 enemyVel = enemyHit.velocity;

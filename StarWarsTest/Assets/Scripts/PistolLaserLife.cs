@@ -16,12 +16,12 @@ public class PistolLaserLife : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision col){
 
-		ContactPoint point = col.contacts[0];
-		Vector3 impactPoint = point.point;
+		//ContactPoint point = col.contacts[0];
+		//Vector3 impactPoint = point.point;
 
 		if (col.transform.tag != "Planet") {
 			if (col.transform.tag != "Laser" && col.transform.tag != "Player") {
-				GameObject explosion = Instantiate (hitExplosion, impactPoint, transform.rotation) as GameObject;
+				//GameObject explosion = Instantiate (hitExplosion, impactPoint, transform.rotation) as GameObject;
 
 				if (col.transform.tag != "Enemy") {
 					Debug.Log (col.transform.tag);

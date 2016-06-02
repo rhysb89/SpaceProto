@@ -60,7 +60,7 @@ public class CameraTest : MonoBehaviour {
 
 		}
 
-		y = ClampAngle (y, -20,30);
+		y = ClampAngle (y, -90,70);
 		Quaternion rotation = Quaternion.Euler (y,0,0);
 
 		desireDistance -= Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * ZoomRate * Mathf.Abs(desireDistance);
