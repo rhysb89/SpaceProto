@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1b7f80b95f6b5d84ab130ea6065d1221
+guid: bc97ba4a77e2548c4a8487696a63080a
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -167,7 +167,13 @@ ModelImporter:
     resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    animationImportErrors: 
+    animationImportErrors: '
+
+      Imported file ''Smilzo_LOD'' conversion failed: Required human bone ''Head''
+      not found
+
+
+'
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0

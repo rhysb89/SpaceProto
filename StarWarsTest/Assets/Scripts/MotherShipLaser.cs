@@ -3,10 +3,9 @@ using System.Collections;
 
 public class MotherShipLaser : MonoBehaviour {
 	public float sightRange = 150.0F;
-	public float attackRange = 75.0F;
+
 	public GameObject bullet;
-	public float fireRate = 0.09F;
-	public int rounds = 10000;
+
 	//public AudioClip shot;
 	public float fireSpeed;
 
@@ -41,17 +40,12 @@ public class MotherShipLaser : MonoBehaviour {
 
 				if (hit.transform.tag == "Player") {
 					for (int i = 0; i < 1; i++) {
-						//nextFire = Time.time + fireRate;
-
-						//gun.LookAt (player.transform);
 				
 						GameObject laserBeam = Instantiate (bullet, gun.position, gun.rotation) as GameObject;
 
 						laserBeam.GetComponent<Rigidbody> ().velocity = transform.forward * fireSpeed;
 	
 						canFire = false;
-						//i = 0;
-
 						Invoke ("FireDelay", 0.5f);
 					}
 				}

@@ -18,7 +18,7 @@ public class AILaserLife : MonoBehaviour {
 
 		if (col.transform.tag != "EnemyLaser") {
 			if (col.transform.tag != "Enemy") {
-							
+				
 				Destroy (gameObject);
 			}
 

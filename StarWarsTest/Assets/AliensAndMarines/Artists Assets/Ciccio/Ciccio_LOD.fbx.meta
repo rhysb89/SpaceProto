@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d0e85e4ded5c4a40ab9f5e3bfbc43a3
+guid: dcf859c4c47374877ada21c4beb123ba
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -172,7 +172,21 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Ciccio_SH_Spine01J' has translation animation
+      that will be discarded.\n\t'Ciccio_SH_Spine02J' has translation animation that
+      will be discarded.\n\t'Ciccio_SH_Spine03J' has translation animation that will
+      be discarded.\n\t'Ciccio_SH_Spine03J' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\t'Ciccio_SH_SpineTopJ' has translation
+      animation that will be discarded.\n\t'Ciccio_SH_SpineTopJ' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'Ciccio_SH_HeadJ'
+      has translation animation that will be discarded.\n\t'Ciccio_SH_lClavicleJ'
+      has translation animation that will be discarded.\n\t'Ciccio_SH_lShoulderJ'
+      has translation animation that will be discarded.\n\t'Ciccio_SH_rClavicleJ'
+      has translation animation that will be discarded.\n\t'Ciccio_SH_lBallJ' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Ciccio_SH_rBallJ'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1

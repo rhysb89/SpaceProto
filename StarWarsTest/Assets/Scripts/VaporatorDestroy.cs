@@ -11,6 +11,7 @@ public class VaporatorDestroy : MonoBehaviour {
 	public Transform explodePoint;
 	public GameObject bigExplode;
 	public GameObject Parent;
+	public DestroyThis destroyTarget;
 	// Use this for initialization
 	void Start () {
 		bigExplode.SetActive (false);
@@ -21,6 +22,7 @@ public class VaporatorDestroy : MonoBehaviour {
 		if (health <= 0) {
 			Mothership.vapCount += 1;
 			bigExplode.SetActive (true);
+			destroyTarget.DestroyNow = true;
 			Parent.gameObject.SetActive (false);
 			Debug.Log (Mothership.vapCount);
 			Invoke ("Explodes", 0.5f);

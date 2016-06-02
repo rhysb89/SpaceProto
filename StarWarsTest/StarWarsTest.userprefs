@@ -1,23 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MotherShipLaser.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AILaserLife.cs">
     <Files>
-      <File FileName="Assets\Scripts\Mothership.cs" Line="26" Column="27" />
-      <File FileName="Assets\Scripts\MotherShipLaser.cs" Line="43" Column="27" />
-      <File FileName="Assets\Scripts\AIGround.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AITrig.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Laser.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PistolLaserLife.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AI.cs" Line="181" Column="33" />
-      <File FileName="Assets\Scripts\DestroyExplosionLife.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ExplosionLife.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlanetMission.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Movement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\RadarIndicator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WaterTower.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Pistol.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AILaserLife.cs" Line="1" Column="1" />
-      <File FileName="Assets\Imported\VolumetricLines\Scripts\VolumetricLineBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets/Imported/FX 3D Radar/Scripts/ExampleScripts/DestroyThis.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/VaporatorDestroy.cs" Line="25" Column="36" />
+      <File FileName="Assets/Scripts/AILaserLife.cs" Line="21" Column="5" />
+      <File FileName="Assets/Scripts/MotherShipLaser.cs" Line="48" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
